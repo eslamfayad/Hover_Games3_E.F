@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Eslam Fayad</title>
+</head>
+<style>
+	.body{
+		background-color: #03587A;
+		background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/bghome.jpg");
+		background-size:cover;
+		background-repeat: no-repeat;
+		align-content: center;
+		}
+	.banner
+		{
+			background-color: #ffffff;
+			width: 100%;
+			display:flex;
+			padding-bottom: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+			padding-top: 0px;
+		}
+	.main
+		{
+			width: 100%;
+			display:inline-table;
+			padding-bottom: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+			padding-top: 0px;
+			color:#FFFFFF;
+		}
+	.h1 {
+		  color:#2D2727;
+		  font: "serif";
+		  text-align: center;
+		 } 
+	.h2 {
+		  color:#FFFFFF;
+		  font: "serif";
+		 }
+	 .h7 {
+		 color:#FFFFFF;
+		 font: "serif";
+		 }
+	 .p  {color: #FFFFFF;}
+	 .button 
+		{
+			color: blue;
+			background:# #EEEEEE;
+			border: 1px solid #000;
+			border-radius: 8px;
+			position: center;
+			height: 50px;
+			width: 50px;
+		}
+	.datalist 
+		{
+  			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			writing-mode: vertical-lr;
+			width: 130px;
+			color: #FFFFFF;
+		}
+	.option { padding: 0;}
+	.input[type="range"] 
+		{
+		  width: 200px;
+		  margin: 0;
+		  color:#FFFFFF
+		}
+</style>
+<body class="body">
+	<header class="banner">
+		<section class="banner">
+			<div align="right" class="banner" >
+				<img src="images/robot52.png" alt=""  width="80px" height="100px">
+			</div>	
+			<div align="center" class="banner"><h1 class="h1"><b> SMART FARM ROBOT CONTROL</b></h1></div>
+		</section>	
+	</header>
+
+<main>
+		<section id="main">
+			<div align="center" class="main">
+				<div id="1-Main">
+				<table width="500px" border="0" >
+  					<tbody>
+    				<tr>
+      					<td width="30%" align="right"><img src=".\images\auto.png" width="70px" height="70px" onclick="auto()"></td>
+						<td width="10%" align="right">
+							<div><img style="height: 40px; background-color:cadetblue " src=".\images\lightoff.png" onclick="lightoff()">
+							<figcaption><b>OFF</b></figcaption>
+							</div>
+						</td>
+      					<td width="20%" align="center"><font color="red">
+					    <p Id="autop">Manual</p></font>
+						</td>
+      					<td width="10%" align="left">
+							<div><img style="height:40px;background-color:azure; " src=".\images\lighton.png" onclick="lighton()">
+							<figcaption><b>ON. </b></figcaption>
+							</div>
+						</td>
+						<td width="30%" align="left"><img src=".\images\manual.png" width="70px" height="70px" onclick="manual()"></td>
+    				</tr>
+  					</tbody>
+				</table>
+				</div>
+				
+<div id="2-main">
+				<table width="500px" border="0" align="middel">
+  				 	<tbody>
+  					<tr>
+						<td width="30%" align="left"><b>Temperature = </b> <font color="red"> 31.21</font></td>
+						<td width="30%"><b>Pressure = </b> <font color="red"> 95858.25</font></td>
+					    <td width="30%"><b>Humidity = </b><font color="red"> 60.91</font></td>
+					
+  					</tr>
+					<tr>
+						<td width="30%" align="right"><b>Gas Resisitance=</b> </td>
+						<td width="30%"><font color="red">55077.45</font></td>
+					    <td width="30%"><b></b><font color="red">
+					    <p Id="lspeed">Normal Speed </p></font></td>
+					
+  					</tr>
+					<tr>
+					<td width="30%" align="center">	
+						<table width="90%" border="0" >
+						<caption>
+						Select Motor Speed
+						</caption>
+  						<tbody>
+						
+						<tr><td>								<div><button style="height: 		40px; width: 45px; font-		size:10px" onclick="nospeed()">			<b>Stop</b></button>
+							</div></td>
+							<td><div><button style="height: 40px; width: 45px; font-size: 10px" onclick="lowspeed()"><b>Low</b></button></div>
+						</td>
+						</tr>
+						<tr><td><div><button style="height: 40px; width: 45px; font-size: 10px" onclick="regularspeed()"><b>Normal</b></button></div></td>
+							<td>
+								<div><button style="height: 40px; width: 45px; font-size: 10px;" onclick="highspeed()"><b>High</b></button></div></td>
+						</tr>
+					</tbody>
+					</table>
+					</td>
+					<td width="30%" align="center"><table width="176" border="0">
+  <tbody>
+    <tr><td width="50"></td>
+        <td width="56"><img style="height: 50px;" src=".\images\forward.png" onclick="forward()"></td>
+        <td width="80"></td>
+    </tr>
+    <tr>
+      <td><img style="height: 50px;" src=".\images\left.png" onclick="left()"></td>
+		<td><img style="height: 50px;" src=".\images\stop.png" onclick="stop();"></td>
+      <td><img height="50" src=".\images\right.png" onclick="right()"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img height="50px" src=".\images\reverse.png" onclick="reverse();"></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table></td>
+		<td width="30%"><div class="slider">
+		<label for="fader">Select  Motor Speed</label>
+		<br />
+
+			<input type="range" id="fader" min="0" max="75" step="25" onchange="rangespeed(this.value);"
+list="volsettings">		  
+<datalist id="volsettings" class="datalist">
+<option onClick="nospeed()" value="0" label="Stop"></option>
+<option onclick="lowspeed()" value="25" label="Low Speed" ></option>
+<option onclick="regularspeed()" value="50" label="Normal" ></option>
+<option onclick="highspeed()" value="75" label="MAX Speed" ></option>
+</datalist>
+
+  
+	 </div></td>
+					</tr>			
+  	<tr>
+	<td width="30%"></td>
+	<td width="30%"></td>
+	<td width="30%"></td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+	<div id="3-main">
+		<table width="500px" border="0" align="middel">
+  		<tbody>	
+        <tr>
+			<td width="30%"><b>Camera Tilt Pan</b></td>
+            <td width="30%" rowspan="6">  <iframe src=".\images\robotmain.png" frameborder="0" align="top" width="400px" height="250px" scrolling="no"></iframe>
+          </td>
+          <td width="30%"><b>Camera Pan Position</b></td>
+        </tr>
+        
+        <tr>
+          <td>
+	    <table width="100" border="0" >
+  <tbody>
+    <tr>
+      <td><button style="height: 40px; width: 40px; font-size: 15px" onclick="downtilt()">-D</button></td>
+      <td>&nbsp;</td>
+      <td> <button style="height: 40px; width: 40px; font-size: 15px" onclick="downcentertilt()">D</button></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><button style="height: 40px; width: 40px; font-size: 15px" onclick="centertilt()">0</button></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><button style="height: 40px; width: 40px; font-size: 15px" onclick="upcentertilt()">U</button></td>
+      <td>&nbsp;</td>
+      <td><button style="height: 40px; width: 40px; font-size: 15px" onclick="uptilt()">U+</button></td>
+    </tr>
+  </tbody>
+</table>
+	</td>
+          <td>
+			  <table width="100" border="0">
+  <tbody>
+    <tr>
+      <td><button style="height: 40px; width: 40px; font-size: 15px" onclick="leftCenterPan()">L</button></td>
+      <td>&nbsp;</td>
+      <td>
+		<button style="height: 40px; width: 40px; font-size: 10px" onclick="leftpan()">+L</button></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><button style="height: 40px; width: 40px; font-size: 10px" onclick="centerpan()">0</button></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td><button style="height: 40px; width: 40px; font-size: 10px" onclick="rightCenterPan()">R</button></td>
+      <td>&nbsp;</td>
+      <td><button style="height: 40px; width: 40px; font-size: 10px" onclick="rightpan()">R+</button></td>
+    </tr>
+	 <tr>
+          <td></td>
+          <td></td>
+		  <td></td>
+     </tr>
+	 <tr>
+          <td></td>
+          <td></td>
+		  <td></td>
+     </tr>
+     <tr>
+          <td></td>
+          <td></td>
+		  <td></td>
+        </tr>
+     </tbody>
+</table></td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+			</div>
+		</section>
+   </main>
+	<footer align="right"><section><div class="h7">
+		<p>Copyright©2023 Eslam Fayad</p></div></section></footer>
+<script>
+	
+	var xmlhttp; xmlhttp=new XMLHttpRequest; 
+	function rangespeed(rspeed){
+		console.log(rspeed);
+		if (rspeed == 0) {
+  		console.log("Slider Stop");
+		nospeed();
+		}
+		if (rspeed == 25) {
+  		console.log("Slider Low Speed");
+		lowspeed();
+		}
+if (rspeed == 50) {
+  console.log(" Slider Regular Speed");
+	regularspeed();
+} 
+if (rspeed == 75) {
+ console.log("Slider High Speed");
+ highspeed();
+} 
+	}
+		
+	var xmlhttp; xmlhttp=new XMLHttpRequest;
+	function lighton()
+		{
+			xmlhttp.open("GET","cgi-bin/lighton.cgi",true); 
+			xmlhttp.send();
+			console.log("lighton");
+		}
+	function lightoff() { 
+			xmlhttp.open("GET","cgi-bin/lightoff.cgi",true); 
+			xmlhttp.send();
+		console.log("lightoff");
+		}
+
+	
+	var xmlhttp; xmlhttp=new XMLHttpRequest;
+function forward() { 
+		xmlhttp.open("GET","cgi-bin/forward.cgi",true); 
+		xmlhttp.send();
+		console.log("Forward");
+	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
+	function stop() { 
+		xmlhttp.open("GET","cgi-bin/stop.cgi",true); 
+		xmlhttp.send();
+		console.log("Stop");
+	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
+	function left() { 
+		xmlhttp.open("GET","cgi-bin/left.cgi",true); 
+		xmlhttp.send();
+		console.log("Left");
+	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
+	function right() { 
+		xmlhttp.open("GET","cgi-bin/right.cgi",true); 
+		xmlhttp.send();
+		console.log("Right");
+	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
+	function reverse() { 
+		xmlhttp.open("GET","cgi-bin/reverse.cgi",true); 
+		xmlhttp.send();
+		console.log("Reverse");
+	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
+	function lowspeed() { 
+		xmlhttp.open("GET","cgi-bin/lowspeed.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun Low Speed");
+		document.getElementById("lspeed").innerHTML ="Low Speed"; 
+	}
+	function regularspeed() { 
+		xmlhttp.open("GET","cgi-bin/regularspeed.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun Regular Speed");
+		document.getElementById("lspeed").innerHTML ="Normal Speed"; 
+	}
+	function highspeed() { 
+		xmlhttp.open("GET","cgi-bin/highspeed.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun High Speed");
+		document.getElementById("lspeed").innerHTML ="High Speed"; 
+	}
+	function nospeed() { 
+		xmlhttp.open("GET","cgi-bin/nospeed.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun No Speed");
+		document.getElementById("lspeed").innerHTML ="Stop"; 
+	}
+	
+	function downtilt() { 
+		xmlhttp.open("GET","cgi-bin/downtilt.cgi",true); 
+		xmlhttp.send();
+		console.log("Down Tilt");
+	}
+	function downcentertilt() { 
+		xmlhttp.open("GET","cgi-bin/downcentertilt.cgi",true); 
+		xmlhttp.send();
+		console.log("Down Center Tilt");
+	}
+	function centertilt() { 
+		xmlhttp.open("GET","cgi-bin/centertilt.cgi",true); 
+		xmlhttp.send();
+		console.log("Center Tilt");
+	}
+	function upcentertilt() { 
+		xmlhttp.open("GET","cgi-bin/upcentertilt.cgi",true); 
+		xmlhttp.send();
+		console.log("Up Center Tilt");
+	}
+	function uptilt() { 
+		xmlhttp.open("GET","cgi-bin/uptilt.cgi",true); 
+		xmlhttp.send();
+		console.log("Up Tilt");
+	}
+	function leftpan() { 
+		xmlhttp.open("GET","cgi-bin/leftpan.cgi",true); 
+		xmlhttp.send();
+	}
+	function leftCenterPan() { 
+		xmlhttp.open("GET","cgi-bin/leftCenterPan.cgi",true); 
+		xmlhttp.send();
+	}
+	function centerpan() { 
+		xmlhttp.open("GET","cgi-bin/centerpan.cgi",true); 
+		xmlhttp.send();
+	}
+	function rightCenterPan() { 
+		xmlhttp.open("GET","cgi-bin/rightCenterPan.cgi",true); 
+		xmlhttp.send();
+	}
+	function rightpan() { 
+		xmlhttp.open("GET","cgi-bin/rightpan.cgi",true); 
+		xmlhttp.send();
+			}
+	function auto() { 
+		xmlhttp.open("GET","cgi-bin/auto.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun Auto");
+		document.getElementById("autop").innerHTML ="Auto"; 
+	}
+		
+		function manual() { 
+		xmlhttp.open("GET","cgi-bin/manual.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun Manual");
+		document.getElementById("autop").innerHTML ="Manual"; 
+		}
+
+window.addEventListener("keypress", function (evt) {
+var SPACEBAR = 32;
+if (evt.which === SPACEBAR) {
+stop();
+evt.preventDefault();
+}
+});
+
+window.addEventListener("keypress", function (evt) {
+var w = 119;
+if (evt.which === w) {
+forward();
+evt.preventDefault();
+}
+});
+
+
+window.addEventListener("keypress", function (evt) {
+var a = 97;
+if (evt.which === a) {
+left();
+evt.preventDefault();
+}
+});
+
+window.addEventListener("keypress", function (evt) {
+var d = 100;
+if (evt.which === d) {
+right();
+evt.preventDefault();
+}
+});
+
+window.addEventListener("keypress", function (evt) {
+var s = 115;
+if (evt.which === s) {
+reverse();
+evt.preventDefault();
+}
+});	
+	</script>	
+</body>
+</html>
