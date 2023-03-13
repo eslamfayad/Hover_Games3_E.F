@@ -1,3 +1,3 @@
 #!/bin/bash
 
-i2cset -y 5 50 0x11 64
+i2cset -y 5 50 88

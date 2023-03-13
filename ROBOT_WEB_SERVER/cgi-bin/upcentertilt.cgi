@@ -1,5 +1,4 @@
 #!/bin/bash
 
-echo 0=75% > /dev/servoblaster
-
+i2cset -y 5 50 107
 

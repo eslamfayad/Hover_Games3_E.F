@@ -2,21 +2,11 @@
 <html>
 <head>
     <title>Eslam Fayad</title>
-<!--    <link rel="stylesheet" href="nicepage.css" media="screen">
--->
-	
-<!--<link rel="stylesheet" href="Home.css" media="screen">
--->
-   <!-- <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 5.6.2, nicepage.com">
--->
 </head>
-
 <style>
 	.body{
 		background-color: #03587A;
-		background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/BGHOme.jpg");
+		background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/bghome.jpg");
 		background-size:cover;
 		background-repeat: no-repeat;
 		align-content: center;
@@ -85,7 +75,7 @@
 <body class="body">
 	<header class="banner">
 		<section class="banner">
-			<div align="left" class="banner" >
+			<div align="right" class="banner" >
 				<img src="images/robot52.png" alt=""  width="80px" height="100px">
 			</div>	
 			<div align="center" class="banner"><h1 class="h1"><b> SMART FARM ROBOT CONTROL</b></h1></div>
@@ -99,20 +89,21 @@
 				<table width="500px" border="0" >
   					<tbody>
     				<tr>
-      					<td width="20%"></td>
-						<td width="20%" align="right">
+      					<td width="30%" align="right"><img src=".\images\auto.png" width="70px" height="70px" onclick="auto()"></td>
+						<td width="10%" align="right">
 							<div><img style="height: 40px; background-color:cadetblue " src=".\images\lightoff.png" onclick="lightoff()">
 							<figcaption><b>OFF</b></figcaption>
 							</div>
 						</td>
-      					<td width="20%">
+      					<td width="20%" align="center"><font color="red">
+					    <p Id="autop">Manual</p></font>
 						</td>
-      					<td width="20%" align="left">
+      					<td width="10%" align="left">
 							<div><img style="height:40px;background-color:azure; " src=".\images\lighton.png" onclick="lighton()">
 							<figcaption><b>ON. </b></figcaption>
 							</div>
 						</td>
-						<td width="20%"></td>
+						<td width="30%" align="left"><img src=".\images\manual.png" width="70px" height="70px" onclick="manual()"></td>
     				</tr>
   					</tbody>
 				</table>
@@ -162,13 +153,13 @@
     </tr>
     <tr>
       <td><img style="height: 50px;" src=".\images\left.png" onclick="left()"></td>
-      <td><img style="height: 50px;" src=".\images\stop.png" onclick="stop()"></td>
+		<td><img style="height: 50px;" src=".\images\stop.png" onclick="stop();"></td>
       <td><img height="50" src=".\images\right.png" onclick="right()"></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><img style="height: 50px;" src=".\images\reverse.png" onclick="reverse()"></td>
-      <td>&nbsp;</td>
+      <td><img height="50px" src=".\images\reverse.png" onclick="reverse();"></td>
+      <td></td>
     </tr>
   </tbody>
 </table></td>
@@ -201,7 +192,7 @@ list="volsettings">
   		<tbody>	
         <tr>
 			<td width="30%"><b>Camera Tilt Pan</b></td>
-            <td width="30%" rowspan="6">  <iframe src="https:PUT YOUR IP HERE FOR CAMERA" frameborder="0" align="middel" width="400px" height="290px" scrolling="no"></iframe>
+            <td width="30%" rowspan="6">  <iframe src=".\images\robotmain.png" frameborder="0" align="top" width="400px" height="250px" scrolling="no"></iframe>
           </td>
           <td width="30%"><b>Camera Pan Position</b></td>
         </tr>
@@ -276,7 +267,7 @@ list="volsettings">
 		<p>Copyright©2023 Eslam Fayad</p></div></section></footer>
 <script>
 	
-			var xmlhttp; xmlhttp=new XMLHttpRequest; 
+	var xmlhttp; xmlhttp=new XMLHttpRequest; 
 	function rangespeed(rspeed){
 		console.log(rspeed);
 		if (rspeed == 0) {
@@ -295,8 +286,6 @@ if (rspeed == 75) {
  console.log("Slider High Speed");
  highspeed();
 } 
-
-	
 	}
 		
 	var xmlhttp; xmlhttp=new XMLHttpRequest;
@@ -314,34 +303,36 @@ if (rspeed == 75) {
 
 	
 	var xmlhttp; xmlhttp=new XMLHttpRequest;
-	
-	
-	function forward() { 
+function forward() { 
 		xmlhttp.open("GET","cgi-bin/forward.cgi",true); 
 		xmlhttp.send();
 		console.log("Forward");
 	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
 	function stop() { 
 		xmlhttp.open("GET","cgi-bin/stop.cgi",true); 
 		xmlhttp.send();
 		console.log("Stop");
 	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
 	function left() { 
 		xmlhttp.open("GET","cgi-bin/left.cgi",true); 
 		xmlhttp.send();
 		console.log("Left");
 	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
 	function right() { 
 		xmlhttp.open("GET","cgi-bin/right.cgi",true); 
 		xmlhttp.send();
 		console.log("Right");
 	}
+var xmlhttp; xmlhttp=new XMLHttpRequest;
 	function reverse() { 
 		xmlhttp.open("GET","cgi-bin/reverse.cgi",true); 
 		xmlhttp.send();
 		console.log("Reverse");
 	}
-	
+var xmlhttp; xmlhttp=new XMLHttpRequest;
 	function lowspeed() { 
 		xmlhttp.open("GET","cgi-bin/lowspeed.cgi",true); 
 		xmlhttp.send();
@@ -366,7 +357,6 @@ if (rspeed == 75) {
 		console.log("Fun No Speed");
 		document.getElementById("lspeed").innerHTML ="Stop"; 
 	}
-	
 	
 	function downtilt() { 
 		xmlhttp.open("GET","cgi-bin/downtilt.cgi",true); 
@@ -413,7 +403,20 @@ if (rspeed == 75) {
 		xmlhttp.open("GET","cgi-bin/rightpan.cgi",true); 
 		xmlhttp.send();
 			}
-stop();
+	function auto() { 
+		xmlhttp.open("GET","cgi-bin/auto.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun Auto");
+		document.getElementById("autop").innerHTML ="Auto"; 
+	}
+		
+		function manual() { 
+		xmlhttp.open("GET","cgi-bin/manual.cgi",true); 
+		xmlhttp.send();
+		console.log("Fun Manual");
+		document.getElementById("autop").innerHTML ="Manual"; 
+		}
+
 window.addEventListener("keypress", function (evt) {
 var SPACEBAR = 32;
 if (evt.which === SPACEBAR) {
@@ -422,7 +425,6 @@ evt.preventDefault();
 }
 });
 
-forward();
 window.addEventListener("keypress", function (evt) {
 var w = 119;
 if (evt.which === w) {
@@ -432,7 +434,6 @@ evt.preventDefault();
 });
 
 
-left();
 window.addEventListener("keypress", function (evt) {
 var a = 97;
 if (evt.which === a) {
@@ -441,7 +442,6 @@ evt.preventDefault();
 }
 });
 
-right();
 window.addEventListener("keypress", function (evt) {
 var d = 100;
 if (evt.which === d) {
@@ -450,7 +450,6 @@ evt.preventDefault();
 }
 });
 
-reverse();
 window.addEventListener("keypress", function (evt) {
 var s = 115;
 if (evt.which === s) {
@@ -458,8 +457,6 @@ reverse();
 evt.preventDefault();
 }
 });	
-
-		
 	</script>	
 </body>
 </html>
